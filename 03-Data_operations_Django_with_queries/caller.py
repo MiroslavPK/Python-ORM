@@ -1,6 +1,6 @@
 import os
 import django
-from django.db.models import F, fields
+from django.db.models import F
 
 # Set up Django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "orm_skeleton.settings")

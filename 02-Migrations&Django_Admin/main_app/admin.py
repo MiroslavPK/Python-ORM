@@ -27,7 +27,7 @@ class StudentAdmin(admin.ModelAdmin):
         }),
         ('Academic Information', {
             'fields':('grade',),
-            'classes': ['collapse'],
+            'classes': ('collapse'),
         })
     )
 

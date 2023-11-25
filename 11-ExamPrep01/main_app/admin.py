@@ -7,7 +7,7 @@ class DirectorAdmin(admin.ModelAdmin):
     list_display    = ['full_name', 'birth_date', 'nationality']
     list_filter     = ['years_of_experience']
     search_fields   = ['full_name', 'nationality']
-    search_help_text= "Search Director by full name"
+    search_help_text= "Search Director by full name or nationality"
 
 
 @admin.register(Actor)
@@ -25,4 +25,4 @@ class MovieAdmin(admin.ModelAdmin):
     list_filter     = ['is_awarded', 'is_classic', 'genre']
     search_fields   = ['title', 'director__full_name',]
     readonly_fields = ['last_updated']
-    search_help_text= "Search Movie by title"
+    search_help_text= "Search Movie by title, or director name"

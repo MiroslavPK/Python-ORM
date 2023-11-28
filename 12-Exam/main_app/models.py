@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator, MinValueValidator, MaxValueValidator
-# from main_app.validators import validate_birth_year, validate_rating
+from main_app.validators import validate_birth_year, validate_rating
 from main_app.manager import AuthorManager
 
 
@@ -38,9 +38,9 @@ class Author(models.Model):
 
     birth_year = models.PositiveIntegerField(
         validators=[
-            # validate_birth_year,
-            MinValueValidator(1990),
-            MaxValueValidator(2005),
+            validate_birth_year,
+            # MinValueValidator(1990),
+            # MaxValueValidator(2005),
         ],
     )
 
@@ -88,9 +88,9 @@ class Article(ContentMixin):
 class Review(ContentMixin):
     rating = models.FloatField(
         validators=[
-            # validate_rating
-            MinValueValidator(1.0),
-            MaxValueValidator(5.0),
+            validate_rating
+            # MinValueValidator(1.0),
+            # MaxValueValidator(5.0),
         ],
     )
 
